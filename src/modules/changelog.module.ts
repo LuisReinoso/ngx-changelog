@@ -1,5 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { ChangelogComponent } from '../components/changelog.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -13,6 +14,9 @@ import { ChangelogComponent } from '../components/changelog.component';
         // Directives.
         // Components.
         ChangelogComponent
+    ],
+    imports: [
+        CommonModule
     ]
 })
 // Consider registering providers using a forRoot() method

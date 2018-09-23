@@ -1,4 +1,24 @@
-<div class="sum">
-    <p>Somma</p>
-    <p>{{ sum }}</p>
+<div class="contenedor" *ngFor="let chlog of changelog">
+    <div class="version">
+        <strong>{{ chlog.version }}</strong>
+    </div>
+    <div class="contenedor-dia" *ngFor="let dia of chlog.dias">
+        <div class="fila contenedor-fecha">
+            <strong class="columna-25 fecha">
+                {{ dia.fecha | date: 'yyyy-MM-dd'}}
+            </strong>
+        </div>
+        <div class="fila contenedor-log" *ngFor="let log of dia.logs">
+            <div class="columna-25">
+                <div class="etiqueta" [ngClass]="log.color">
+                    <strong>{{ log.tipo }}</strong>
+                </div>
+            </div>
+            <div class="columna-75">
+                <div class="contenido">
+                    {{ log.contenido }}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

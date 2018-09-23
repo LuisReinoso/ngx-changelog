@@ -17,10 +17,10 @@ describe('Component: ChangelogComponent', () => {
         comp = fixture.componentInstance;
     });
 
-    it('should render the sum', (() => {
-        fixture.detectChanges();
+    // it('should render the sum', (() => {
+    //     fixture.detectChanges();
 
-        expect(fixture.debugElement.nativeElement.textContent).toContain('887');
-    }));
+    //     expect(fixture.debugElement.nativeElement.textContent).toContain('887');
+    // }));
 
 });

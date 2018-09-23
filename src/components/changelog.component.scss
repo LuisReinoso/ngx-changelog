@@ -1,5 +1,115 @@
-.sum {
-    p {
-        color: red;
-    }
+$blue: #0073dd;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #17a2b8;
+
+.fila {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.columna-50 {
+  flex: 50%;
+}
+
+.columna-25 {
+  flex: 25%;
+}
+
+.columna-75 {
+  flex: 75%;
+}
+
+.contenedor {
+  margin: 2px;
+  max-width: 600px;
+}
+
+.contenedor-dia {
+  position: relative;
+  padding: 5px;
+  padding-left: 50px;
+}
+
+.contenedor-log {
+  padding: 10px;
+}
+
+.contenedor-fecha {
+  padding: 5px;
+}
+
+.fecha {
+  font-size: 12px;
+  border-bottom: 1px solid $purple;
+}
+
+.etiqueta {
+  border-radius: 10px;
+  padding: 5px 10px;
+  width: 70%;
+  font-size: 10px;
+  text-align: center;
+  color: white;
+}
+
+.contenido {
+  padding: 2px;
+}
+
+.b-success {
+  background-color: $green;
+}
+.b-info {
+  background-color: $cyan;
+}
+.b-warning {
+  background-color: $yellow;
+}
+.b-danger {
+  background-color: $red;
+}
+
+// linea
+.contenedor-dia::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  background-color: $purple;
+  top: 0;
+  bottom: 0;
+  left: 25px;
+  margin-left: -5px;
+}
+
+// circulo
+.contenedor-dia::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 25px;
+  margin-left: -12px;
+  background-color: white;
+  border: 4px solid $indigo;
+  top: 8px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .etiqueta {
+    border-radius: 10px;
+    padding: 5px 20px;
+    width: 100%;
+    font-size: 10px;
+    text-align: center;
+    color: white;
+  }
 }
