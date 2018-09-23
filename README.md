@@ -1,6 +1,6 @@
 # ngx-changelog
 
-[![Build Status](https://travis-ci.org/luisreinoso/ngx-changelog.svg?branch=master)](https://travis-ci.org/luisreinoso/ngx-changelog)
+[![Build Status](https://travis-ci.org/LuisReinoso/ngx-changelog.svg?branch=master)](https://travis-ci.org/LuisReinoso/ngx-changelog)
 
 > Muestra el changelog de la aplicación mediante un timeline; Show the changelog of the application using a timeline.
 
