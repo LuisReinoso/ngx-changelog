@@ -1,45 +1,152 @@
-# ng-changelog
-[![Build Status](https://travis-ci.org/luisreinoso/ng-changelog.svg?branch=master)](https://travis-ci.org/luisreinoso/ng-changelog)
->Muestra el changelog de la aplicación mediante un timeline; Show the changelog of the application using a timeline. 
+# ngx-changelog
 
-El [changelog](https://github.com/luisreinoso/ng-changelog/blob/master/CHANGELOG.md).
+[![Build Status](https://travis-ci.org/luisreinoso/ngx-changelog.svg?branch=master)](https://travis-ci.org/luisreinoso/ngx-changelog)
 
-## Estructura
-- Library:
-    - **src** folder for the classes
-    - **public_api.ts** entry point for all public APIs of the package
-    - **package.json** _npm_ options
-    - **rollup.config.js** _Rollup_ configuration for building the _umd_ bundles
-    - **rollup.es.config.js** _Rollup_ configuration for building the _es2015_ bundles
-    - **tsconfig-build.json** _ngc_ compiler options for _AoT compilation_
-    - **build.js** building process using _ShellJS_
-- Testing:
-    - **tests** folder for unit & integration tests
-    - **karma.conf.js** _Karma_ configuration that uses _webpack_ to build the tests
-    - **spec.bundle.js** defines the files used by _webpack_
-- Extra:
-    - **tslint.json**  _Angular TSLint Preset_ (_TypeScript_ linter rules with _Codelyzer_)
-    - **travis.yml** _Travis CI_ configuration
+> Muestra el changelog de la aplicación mediante un timeline; Show the changelog of the application using a timeline.
+
+## Instalación
+
+```Shell
+npm install ngx-changelog --save
+```
+
+Importar el módulo
+
+```javascript
+import { ChangelogModule } from 'ngx-changelog';
+
+@NgModule({
+  imports: [
+    ..
+    ChangelogModule,
+    ..
+  ]
+})
+```
+
+En example.component.html
+
+```html
+<cmp-changelog [changelog]="changelog"></cmp-changelog>
+```
+
+En example.component.ts
+
+```typescript
+import { IChangelog, Colores, TipoLog } from 'ngx-changelog';
+
+@Component({
+  selector: 'app-example',
+  templateUrl: './example.component.html',
+  styleUrls: ['./example.component.scss']
+})
+export class ExampleComponent {
+  changelog: IChangelog[];
+  constructor() {
+    this.changelog = [
+      {
+        version: 'v2.0.0',
+        dias: [
+          {
+            fecha: new Date('2018/09/22'),
+            logs: [
+              {
+                tipo: TipoLog.agregado,
+                color: Colores.success,
+                contenido: 'Agregado cambios en pedido cotizacion'
+              },
+              {
+                tipo: TipoLog.eliminado,
+                color: Colores.danger,
+                contenido: 'Eliminado pedido cotizacion'
+              }
+            ]
+          },
+          {
+            fecha: new Date('2018/09/23'),
+            logs: [
+              {
+                tipo: TipoLog.agregado,
+                color: Colores.success,
+                contenido: 'Agregado cambios en pedido cotizacion'
+              },
+              {
+                tipo: TipoLog.eliminado,
+                color: Colores.danger,
+                contenido: 'Eliminado pedido cotizacion'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        version: 'v1.0.0',
+        dias: [
+          {
+            fecha: new Date('2018/09/22'),
+            logs: [
+              {
+                tipo: TipoLog.agregado,
+                color: Colores.success,
+                contenido: 'Agregado cambios en pedido cotizacion'
+              },
+              {
+                tipo: TipoLog.eliminado,
+                color: Colores.danger,
+                contenido: 'Eliminado pedido cotizacion'
+              }
+            ]
+          },
+          {
+            fecha: new Date('2018/09/23'),
+            logs: [
+              {
+                tipo: TipoLog.modificado,
+                color: Colores.info,
+                contenido: 'Agregado cambios en pedido cotizacion'
+              },
+              {
+                tipo: TipoLog.pruebas,
+                color: Colores.warning,
+                contenido: 'Eliminado pedido cotizacion'
+              }
+            ]
+          }
+        ]
+      }
+    ];
+  }
+}
+```
 
 ## Testing
-The following command runs unit & integration tests that are in the `tests` folder (you can change the folder in `spec.bundle.js` file): 
+
+The following command runs unit & integration tests that are in the `tests` folder (you can change the folder in `spec.bundle.js` file):
+
 ```Shell
-npm test 
+npm test
 ```
+
 or in watch mode:
+
 ```Shell
 npm run test:watch
 ```
+
 It also reports coverage using _Istanbul_.
 
 ## Building
+
 The following command:
+
 ```Shell
 npm run build
 ```
+
 - starts _TSLint_ with _Codelyzer_ using _Angular TSLint Preset_
 - starts _AoT compilation_ using _ngc_ compiler
 - creates `dist` folder with all the files of distribution, following _Angular Package Format (APF) v6.0_:
+
 ```
 └── dist
     ├── bundles
@@ -68,17 +175,23 @@ npm run build
     ├── public_api.d.ts
     └── README
 ```
+
 To test locally the npm package before publishing:
+
 ```Shell
 npm run pack:lib
 ```
+
 Then you can install it in an app to test it:
+
 ```Shell
 npm install [path]my-library-[version].tgz
 ```
 
 ## Publishing
+
 Before publishing the first time:
+
 - you can register your library on [Travis CI](https://travis-ci.org/): you have already configured `.travis.yml` file
 - you must have a user on the _npm_ registry: [Publishing npm packages](https://docs.npmjs.com/getting-started/publishing-npm-packages)
 
@@ -87,39 +200,18 @@ npm run publish:lib
 ```
 
 ## Documentation
+
 To generate the documentation, this starter uses [compodoc](https://github.com/compodoc/compodoc):
+
 ```Shell
 npm run compodoc
-npm run compodoc:serve 
+npm run compodoc:serve
 ```
-
-## Uso
-### Instalación
-```Shell
-npm install my-library --save 
-```
-### Loading
-#### Using SystemJS configuration
-```JavaScript
-System.config({
-    map: {
-        'my-library': 'node_modules/my-library/bundles/my-library.umd.js'
-    }
-});
-```
-#### Angular-CLI
-No need to set up anything, just import it in your code.
-#### Rollup or webpack
-No need to set up anything, just import it in your code.
-#### Plain JavaScript
-Include the `umd` bundle in your `index.html`:
-```Html
-<script src="node_modules/my-library/bundles/my-library.umd.js"></script>
-```
-and use global `ng.myLibrary` namespace.
 
 ### AoT compilation
+
 The library is compatible with _AoT compilation_.
 
 ## License
+
 MIT

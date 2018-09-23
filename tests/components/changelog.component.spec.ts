@@ -1,4 +1,4 @@
-import { ChangelogComponent } from '../../src/ng-changelog';
+import { ChangelogComponent } from '../../src/ngx-changelog';
 
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 

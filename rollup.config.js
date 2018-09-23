@@ -44,10 +44,10 @@ export default {
     onwarn: () => { return },
     output: {
         format: 'umd',
-        name: 'ng.ngChangelog',
+        name: 'ng.ngxChangelog',
         globals: globals,
         sourcemap: true,
         exports: 'named',
-        amd: { id: 'ng-changelog' }
+        amd: { id: 'ngx-changelog' }
     }
 }

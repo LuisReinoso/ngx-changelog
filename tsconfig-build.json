@@ -38,7 +38,7 @@
         "skipTemplateCodegen": true,
         "annotateForClosureCompiler": true,
         "strictMetadataEmit": true,
-        "flatModuleOutFile": "ng-changelog.js",
-        "flatModuleId": "ng-changelog"
+        "flatModuleOutFile": "ngx-changelog.js",
+        "flatModuleId": "ngx-changelog"
     }
 }

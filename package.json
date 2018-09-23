@@ -1,16 +1,16 @@
 {
-    "name": "ng-changelog",
+    "name": "ngx-changelog",
     "private": true,
     "version": "0.0.1",
     "description": "Muestra el changelog de la aplicación mediante un timeline; Show the changelog of the application using a timeline.",
-    "main": "./bundles/ng-changelog.umd.js",
-    "module": "./fesm5/ng-changelog.js",
-    "es2015": "./fesm2015/ng-changelog.js",
-    "esm5": "./esm5/ng-changelog.js",
-    "esm2015": "./esm2015/ng-changelog.js",
-    "fesm5": "./fesm5/ng-changelog.js",
-    "fesm2015": "./fesm2015/ng-changelog.js",
-    "typings": "./ng-changelog.d.ts",
+    "main": "./bundles/ngx-changelog.umd.js",
+    "module": "./fesm5/ngx-changelog.js",
+    "es2015": "./fesm2015/ngx-changelog.js",
+    "esm5": "./esm5/ngx-changelog.js",
+    "esm2015": "./esm2015/ngx-changelog.js",
+    "fesm5": "./fesm5/ngx-changelog.js",
+    "fesm2015": "./fesm2015/ngx-changelog.js",
+    "typings": "./ngx-changelog.d.ts",
     "scripts": {
         "build": "node build.js",
         "test": "karma start",
@@ -21,15 +21,15 @@
         "compodoc": "compodoc -p tsconfig.json",
         "compodoc:serve": "compodoc -s"
     },
-    "author": "",
+    "author": "Luis Reinoso",
     "repository": {
         "type": "git",
-        "url": "https://github.com/luisreinoso/ng-changelog.git"
+        "url": "https://github.com/luisreinoso/ngx-changelog.git"
     },
     "bugs": {
-        "url": "https://github.com/luisreinoso/ng-changelog/issues"
+        "url": "https://github.com/luisreinoso/ngx-changelog/issues"
     },
-    "homepage": "https://github.com/luisreinoso/ng-changelog",
+    "homepage": "https://github.com/luisreinoso/ngx-changelog",
     "keywords": [
         "angular",
         "javascript",
